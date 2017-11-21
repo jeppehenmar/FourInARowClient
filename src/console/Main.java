@@ -23,7 +23,7 @@ public class Main {
 
         while(true){
             try{
-                DatagramPacket received = new DatagramPacket(new byte[1024], 1024);
+                DatagramPacket received = new DatagramPacket(new byte[10000], 10000);
                 socket.receive(received);
                 String msg = controller.readMsg(received);
                 System.out.println(msg);
