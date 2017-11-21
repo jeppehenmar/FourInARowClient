@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws UnknownHostException, SocketException{
         final DatagramSocket socket = new DatagramSocket(4710);
-        final InetAddress serverIP = InetAddress.getLocalHost();
+        final InetAddress serverIP = InetAddress.getByName("192.168.0.6");
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome.\nWhat will your username be?");
