@@ -38,4 +38,15 @@ public class Sender {
             e.printStackTrace();
         }
     }
+
+    public void sendMSG(InetAddress serverIP, DatagramSocket socket, String msg){
+        try{
+            byte[] data = msg.getBytes();
+
+            DatagramPacket packet = new DatagramPacket(data, data.length, serverIP, 4711);
+            socket.send(packet);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }

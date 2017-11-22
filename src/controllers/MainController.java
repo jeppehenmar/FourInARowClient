@@ -28,4 +28,8 @@ public class MainController {
     public void sendMove(InetAddress serverIP, DatagramSocket socket, String move) {
         sender.sendMove(serverIP, socket, move);
     }
+
+    public void sendMSG(InetAddress serverIP, DatagramSocket socket, String move) {
+        sender.sendMSG(serverIP, socket, move);
+    }
 }

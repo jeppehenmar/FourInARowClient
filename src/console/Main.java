@@ -28,6 +28,9 @@ public class Main {
                 String msg = controller.readMsg(received);
                 if(msg.substring(0, 1).equals("1")||msg.substring(0, 1).equals("2")){
                     String move = input.next();
+                    if(move.equalsIgnoreCase("exit")){
+                        controller.sendMSG(serverIP, socket, move);
+                    }
                     controller.sendMove(serverIP, socket, move);
                 }
                 System.out.println(msg);
