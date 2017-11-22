@@ -23,9 +23,14 @@ public class Main {
 
         while(true){
             try{
-                DatagramPacket received = new DatagramPacket(new byte[10000], 10000);
+                DatagramPacket received = new DatagramPacket(new byte[1024], 1024);
                 socket.receive(received);
                 String msg = controller.readMsg(received);
+                if(msg.substring(0, 1).equals("1")||msg.substring(0, 1).equals("2")){
+                    String move = input.next();
+                    controller.sendMove(serverIP, socket, move);
+                    break;
+                }
                 System.out.println(msg);
             }catch (IOException e){
                 e.printStackTrace();

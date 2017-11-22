@@ -24,4 +24,8 @@ public class MainController {
     public static String readMsg(DatagramPacket packet){
         return packetLogic.readMsg(packet);
     }
+
+    public void sendMove(InetAddress serverIP, DatagramSocket socket, String move) {
+        sender.sendMove(serverIP, socket, move);
+    }
 }

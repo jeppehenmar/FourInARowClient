@@ -26,4 +26,16 @@ public class Sender {
         }
     }
 
+
+    public void sendMove(InetAddress serverIP, DatagramSocket socket, String move) {
+        try{
+            String moveMSG = "MOVE " + move;
+            byte[] data = moveMSG.getBytes();
+
+            DatagramPacket packet = new DatagramPacket(data, data.length, serverIP, 4711);
+            socket.send(packet);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }
