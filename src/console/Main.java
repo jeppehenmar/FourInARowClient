@@ -17,6 +17,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Welcome.\nWhat will your username be?");
+        System.out.println("At any point, type EXIT to quit game");
         String username = input.next();
 
         controller.sendJoin(serverIP, socket, username);
@@ -28,7 +29,7 @@ public class Main {
                 String msg = controller.readMsg(received);
                 if(msg.substring(0, 1).equals("1")||msg.substring(0, 1).equals("2")){
                     String move = input.next();
-                    if(move.equalsIgnoreCase("exit")){
+                    if(move.equals("EXIT")){
                         controller.sendMSG(serverIP, socket, move);
                     }
                     controller.sendMove(serverIP, socket, move);
