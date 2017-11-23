@@ -11,8 +11,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws UnknownHostException, SocketException{
-        final DatagramSocket socket = new DatagramSocket(4710);
-        final InetAddress serverIP = InetAddress.getByName("192.168.0.6");
+        final DatagramSocket socket = new DatagramSocket();
+        final InetAddress serverIP = InetAddress.getLocalHost();
         MainController controller = new MainController();
         Scanner input = new Scanner(System.in);
 
